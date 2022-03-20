@@ -1,0 +1,14 @@
+Package: geoGuess
+Title: Guess the Country or Territory
+Version: 1.0
+Authors@R: 
+    person(given = "Joel",
+           family = "Le Forestier",
+           role = c("aut", "cre"),
+           email = "joel.leforestier@mail.utoronto.ca")
+Description: Generate a random image of a country or territory, guess its name, receive feedback, profit.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
