@@ -7,7 +7,7 @@
 geoGuess()
 }
 \arguments{
-\item{ct_code}{To pick up where you left off with a specific country or territory at some other time, optinally provide the CT Code corresponding to the country or territory you were guessing. The CT Code is provided at the start of each new round of the game.}
+\item{ct_code}{To pick up where you left off with a specific country or territory at some other time, optionally provide the CT Code corresponding to the country or territory you were guessing. The CT Code is provided at the start of each new round of the game.}
 }
 \description{
 Generate a random image of a country or territory, guess its name, receive feedback, profit.
