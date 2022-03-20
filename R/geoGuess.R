@@ -35,15 +35,12 @@ geoGuess <- function(ct_code = 0) {
   guess <- readline(prompt = "Guess a country or territory: ")
 
   #Gve user feedback and another chance to guess
-  if (tolower(guess) != tolower(country)) {
     while(tolower(guess) != tolower(country) & tolower(guess) != "i give up") {
 
-      if(!tolower(guess) %in% tolower(countrydat$name)) {
-        while(!tolower(guess) %in% tolower(countrydat$name)) {
+        if(!tolower(guess) %in% tolower(countrydat$name)) {
           message("That country or territory is not in the dataset (many aren't!). Double check your spelling or try another country or territory.")
           guess <- readline(prompt = "Guess a country or territory: ")
-        }
-      }
+        } else {
 
       #Calculate distance from correct country
       latdiff <- countrydat$latitude[tolower(countrydat$name) == tolower(guess)] - countrydat$latitude[tolower(countrydat$name) == tolower(country)]
@@ -77,8 +74,8 @@ geoGuess <- function(ct_code = 0) {
       #Provide feedback and solicit new guess
       mtext(text = "_", side = 2, adj = 1, col="red", line = 1 - attempt, cex = 2)
       guess <- readline(prompt = paste0("Your guess was ", round(abs(latdiff), 2), "° too far ", latdir, " and ", round(abs(longdiff), 2), "° too far ", longdir, ". Guess again: "))
+        }
     }
-  }
   
   #Check if they gave up
   if (tolower(guess) == "i give up") {
