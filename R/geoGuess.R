@@ -69,7 +69,7 @@ geoGuess <- function(ct_code = 0) {
         longdir <- "east or west"
       }
 
-      attempt <- attempt + .5
+      attempt <- attempt + 1
 
       #Provide feedback and solicit new guess
       mtext(text = "×", side = 2, adj = 1, col="red", line = 1 - attempt, cex = 2)
