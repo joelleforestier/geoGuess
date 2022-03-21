@@ -12,7 +12,7 @@
 
 geoGuess <- function(ct_code = 0) {
   #Load in the data and prepare arguments
-  countrydat <- read.delim("https://github.com/joelleforestier/geoGuess/raw/main/countrydata.txt")
+  countrydat <- read.delim("https://github.com/joelleforestier/geoGuess/raw/main/countrydata.txt", na.strings = "xxxxx")
   attempt <- 0
 
   #Generate random or selected country
@@ -72,18 +72,18 @@ geoGuess <- function(ct_code = 0) {
       attempt <- attempt + .5
 
       #Provide feedback and solicit new guess
-      mtext(text = "_", side = 2, adj = 1, col="red", line = 1 - attempt, cex = 2)
+      mtext(text = "×", side = 2, adj = 1, col="red", line = 1 - attempt, cex = 2)
       guess <- readline(prompt = paste0("Your guess was ", round(abs(latdiff), 2), "° too far ", latdir, " and ", round(abs(longdiff), 2), "° too far ", longdir, ". Guess again: "))
         }
     }
-  
+
   #Check if they gave up
   if (tolower(guess) == "i give up") {
     message(paste0("The answer was: ", country))
   } else {
-    
+
     #Provide feebdack if they got it right
-    mtext(text = "_", side = 2, adj = 1, col="green", line = 1 - (attempt + .5), cex = 2)
-    message("🎉🎉🎉 Great job!🎉🎉🎉")
+    message("🎉🎉🎉 Great job! 🎉🎉🎉")
   }
-}
+  }
+
